@@ -1,0 +1,12 @@
+<div class="embed-responsive embed-responsive-16by9">
+	<section ng-if="!$parent.newPlayer">
+		<iframe class="embed-responsive-item" ng-src='{{"https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.rfc07d37fc4eed1d17243b452dd3441665496e1e0.swf?channel=" + stream.channel | trustUrl}}' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+	</section>
+	<section ng-if="$parent.newPlayer">
+		<iframe class="embed-responsive-item" ng-src='{{"http://www.twitch.tv/" + stream.channel + "/embed" | trustUrl}}' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+	</section>
+</div>
+<div ng-hide="$parent.cinematic" style="padding:4px; text-align:center">
+	<button uib-popover-template="twitchCtrl.favesUrl" popover-title="Favorites" popover-placement="left" class="btn btn-xs" >Faves</button>
+	<button uib-popover-template="twitchCtrl.formUrl" popover-title="Edit stream details" popover-placement="right" class="btn btn-xs" >Edit</button>
+</div>

@@ -1,0 +1,9 @@
+<div>
+	<form name="streamForm" ng-submit="twitchCtrl.saveStream(twitchCtrl.tempStream)" novalidate>
+		<div class="form-group">
+   			<label for="title">Channel name:</label>
+   			<input type="text" class="form-control" id="title" ng-model="twitchCtrl.tempStream.channel" required>
+		</div>
+		<button type="submit" class="btn btn-xs">Save</button>
+	</form>
+</div>

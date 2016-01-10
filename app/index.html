@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="twitchForce">
+  <head>
+  	 <meta charset="UTF-8"> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/app.css" />
+	<title>TwitchForce</title>
+  </head>
+  <body ng-controller="TwitchPanelController as panelCtrl" back-img='{{cinematic ? "" : panelCtrl.backImgUrl}}'>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="floatRight">
+					<button ng-hide="cinematic" class="btn btn-xs" ng-click="cinematic = !cinematic">Cinetmatic mode</button>
+					<a ng-show="cinematic" style="font-size:smaller;" href ng-click="cinematic = !cinematic">Normal</a>
+				</div>
+				<div class="floatLeft">
+					<div class="dropdown">
+						<button ng-hide="cinematic" class="btn btn-xs dropdown-toggle" type="button" data-toggle="dropdown">More
+					  	<span class="caret"></span></button>
+					  	<a ng-show="cinematic" style="font-size:smaller;" href data-toggle="dropdown">More
+					  	<span class="caret"></span></a>
+					  	<ul class="dropdown-menu">
+					    	<li><a href="#/streams" ng-click="newPlayer = false">Streams (Secure)</a></li>
+					    	<li><a href="#/streams" ng-click="newPlayer = true">Streams (Insecure)</a></li>
+					    	<li><a href="#/about">About the site</a></li>
+					  	</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-view></div>
+	</div>
+	<footer ng-hide="cinematic" class="footer">
+      <div class="container" style="text-align:center;">
+        <p class="text-muted" style="margin: 10px;">Made by Anton Forsberg 2016</p>
+      </div>
+    </footer>
+	
+	<!-- Vendors -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.0/ui-bootstrap-tpls.js"></script>
+    
+    
+    <!-- Scripts -->
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/route-config.js"></script>
+    
+    <!-- Directives -->
+    <script type="text/javascript" src="js/directives/tf-twitch-stream.directive.js"></script>
+    <script type="text/javascript" src="js/directives/tf-back-img.directive.js"></script>
+    
+    <!-- Services -->
+    <script type="text/javascript" src="js/services/stream.js"></script>
+    <script type="text/javascript" src="js/services/favorite.js"></script>
+    
+    <!-- Controllers -->
+    <script type="text/javascript" src="js/controllers/tf-twitch-stream-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/tf-twitch-panel-controller.js"></script>
+  </body>
+</html>

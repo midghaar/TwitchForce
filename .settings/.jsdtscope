@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="directives/|controllers/|**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="app/js"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="app/js/controllers"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="app/js/directives"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

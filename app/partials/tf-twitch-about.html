@@ -1,0 +1,23 @@
+<div style="text-align: center !important;" class="jumbotron container">
+	<h2 class="white">TwitchForce</h2>
+	<p class="white">TwitchForce is my first angularjs app, and was made for educational purposes. It allows the user to view four Twitch streams simultaneously. The upper left button toggles a cinematic mode, which minimizes the ui. In the streams view, while not in cinematic mode, you can edit which Twitch channels are shown via the Edit button. Via the button below, you can also set the background image to any web url.</p>
+	<p><a class="btn btn-md btn-success" href ng-click="panelCtrl.showForm = !panelCtrl.showForm" role="button">Site settings</a></p>
+	<div ng-show="panelCtrl.showForm" class="col-sm-6">
+		<form name="backImgForm" ng-submit="panelCtrl.backImgUrl = panelCtrl.newUrl" novalidate>
+			<div class="form-group">
+	   			<label class="white" for="url">Image url:</label>
+	   			<input type="text" class="form-control" id="url" ng-model="panelCtrl.newUrl" required>
+			</div>
+			<button type="submit" class="btn btn-xs">Save</button>
+		</form>
+	</div>
+	<div ng-show="panelCtrl.showForm" class="col-sm-6">
+		<form name="favoriteForm" ng-submit="panelCtrl.addFavorite()" novalidate>
+			<div class="form-group">
+	   			<label class="white" for="newFavorite">Channel to add to favorites:</label>
+	   			<input type="text" class="form-control" id="newFavorite" ng-model="panelCtrl.newFavorite.channel" required>
+			</div>
+			<button type="submit" class="btn btn-xs">Save</button>
+		</form>
+	</div>
+</div>
